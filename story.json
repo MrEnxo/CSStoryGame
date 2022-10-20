@@ -1,0 +1,60 @@
+[
+	{
+		"id": "start",
+		"text": "Hello. What is your name?",
+		"options": {
+			"next": "start2"
+		},
+		"effects":  {
+			"DirectInput": {
+				"var": "name"
+			},
+			"TypeWriter": { "delay":  3 }
+		}
+	},
+	{
+		"id": "start2",
+		"text": "You wake up, it's a very normal ordinary day. This day is nothing more and nothing less than any other day of this week. You wake up in your own bed, in your own house. Do you want to get breakfast today?\n[1] Eat Breakfast\n[2] Skip Breakfast",
+		"options": {
+			"1": "breakfast",
+			"2": "breakfast_skip"
+		}
+	},
+	{
+		"id": "breakfast",
+		"text": "Hmm what sounds better Toast or Eggs and bacon?\n[1] Toast [2] Eggs and Bacon",
+		"options": {
+			"1": "breakfast_toast",
+			"2": "breakfast_eggs"
+		}
+	},
+	{
+		"id": "breakfast_toast",
+		"text": "This breakfast was alright, good enough to get me through the day.",
+		"effects": {
+			"WaitSkipTo": { "section": "test", "delay": 1 },
+			"Karma": { "amount": 1 }
+		}
+	},
+	{
+		"id": "breakfast_eggs",
+		"text": "Yum... These eggs were perfect. Very Filling",
+		"effects": {
+			"WaitSkipTo": { "section": "test", "delay": 1 },
+			"Karma": { "amount": 3 }
+		}
+	},
+	{
+		"id": "breakfast_skip",
+		"text": "Im Skipping breakfast, I might regret this later.",
+		"effects": {
+			"WaitSkipTo": { "section": "test", "delay": 1 },
+			"Karma": { "amount": -2 }			
+		}
+	},
+	{
+		"id": "test",
+		"text": "sus"
+	}
+
+]
