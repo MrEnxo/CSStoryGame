@@ -85,7 +85,19 @@
 	},
 	{
 		"id": "work2",
-		"text": "work2!!"
+		"text": "work2!!",
+		"options": {
+			"any": "death"
+		},
+		"effects": {
+			"SetData": { "causeofdeath":  "poop" }
+		}
+
+	},
+	{
+		"id": "death",
+		"text": "----------------------------------\n  RIP YOU DIED\n - You died of %causeofdeath%\n----------------------------------"
+
 	}
 
 ]

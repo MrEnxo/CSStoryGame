@@ -52,7 +52,7 @@ public class StoryGame {
 
             replacements.put("name","null");
 
-            sections.get("start").run();
+            sections.get("death").run();
         } catch (Exception e) {
             if (!StoryFile.exists()) {
                 System.err.println("Could Not Find Story Data!");
