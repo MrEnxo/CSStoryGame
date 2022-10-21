@@ -21,6 +21,7 @@ public class StoryGame {
     public static HashMap<String, Class<? extends Effect>> Effects = new HashMap<>();
 
     public static double karmaValue = 0;
+
     public static void initEffects() {
 
         Reflections reflections = new Reflections("me.mrenxo.storygame");
@@ -57,6 +58,7 @@ public class StoryGame {
                 System.err.println("Could Not Find Story Data!");
                 System.exit(0);
             }
+            e.printStackTrace();
 
         }
 

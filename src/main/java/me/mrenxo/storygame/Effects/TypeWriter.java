@@ -3,7 +3,9 @@ package me.mrenxo.storygame.Effects;
 import me.mrenxo.storygame.Effect;
 import me.mrenxo.storygame.Section;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class TypeWriter extends Effect {
 
@@ -17,9 +19,12 @@ public class TypeWriter extends Effect {
 
     @Override
     public String runText(String text, Section section) {
+        String[] strs = text.split("\n");
+        String str = strs[0];
+        strs = Arrays.copyOfRange(strs, 1, strs.length);
         try {
-            for (int i = 0; i < text.length(); i++) {
-                System.out.print(text.charAt(i));
+            for (int i = 0; i < str.length(); i++) {
+                System.out.print(str.charAt(i));
                 Thread.sleep((long) (delay * 10));
             }
         } catch (Exception e) {
@@ -27,6 +32,6 @@ public class TypeWriter extends Effect {
         }
         System.out.print('\n');
 
-        return "";
+        return String.join("\n", strs);
     }
 }

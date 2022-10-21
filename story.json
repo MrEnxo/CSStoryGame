@@ -18,43 +18,74 @@
 		"options": {
 			"1": "breakfast",
 			"2": "breakfast_skip"
+		},
+		"effects": {
+			"TypeWriter": { "delay":  3 }
 		}
 	},
 	{
 		"id": "breakfast",
-		"text": "Hmm what sounds better Toast or Eggs and bacon?\n[1] Toast [2] Eggs and Bacon",
+		"text": "Hmm what sounds better Toast, Eggs and bacon, or Hashbrowns?\n[1] Toast \n[2] Eggs and Bacon\n[3] Hashbrowns",
 		"options": {
 			"1": "breakfast_toast",
-			"2": "breakfast_eggs"
+			"2": "breakfast_eggs",
+			"3": "breakfast_hashbrowns"
+		},
+		"effects": {
+			"TypeWriter": { "delay":  3 }
 		}
 	},
 	{
 		"id": "breakfast_toast",
 		"text": "This breakfast was alright, good enough to get me through the day.",
 		"effects": {
-			"WaitSkipTo": { "section": "test", "delay": 1 },
-			"Karma": { "amount": 1 }
+			"WaitSkipTo": { "section": "work", "delay": 1 },
+			"Karma": { "amount": 1 },
+			"TypeWriter": { "delay":  3 }
+		}
+	},
+	{
+		"id": "breakfast_hashbrowns",
+		"text": "Damn, I love me some good hashbrowns.",
+		"effects": {
+			"WaitSkipTo": { "section": "work", "delay": 1 },
+			"Karma": { "amount": 3 },
+			"TypeWriter": { "delay":  3 }
 		}
 	},
 	{
 		"id": "breakfast_eggs",
 		"text": "Yum... These eggs were perfect. Very Filling",
 		"effects": {
-			"WaitSkipTo": { "section": "test", "delay": 1 },
-			"Karma": { "amount": 3 }
+			"WaitSkipTo": { "section": "work", "delay": 1 },
+			"Karma": { "amount": 2 },
+			"TypeWriter": { "delay":  3 }
 		}
+
 	},
 	{
 		"id": "breakfast_skip",
 		"text": "Im Skipping breakfast, I might regret this later.",
 		"effects": {
-			"WaitSkipTo": { "section": "test", "delay": 1 },
-			"Karma": { "amount": -2 }			
+			"WaitSkipTo": { "section": "work", "delay": 1 },
+			"Karma": { "amount": -2 }	,
+			"TypeWriter": { "delay":  3 }		
 		}
 	},
 	{
-		"id": "test",
-		"text": "sus"
+		"id": "work",
+		"text": "Test %karma%",
+		"effects": {
+			"KarmaChoice": {
+				">1": "work2",
+				"=1": "start",
+				"<1": "start"
+			}
+		}
+	},
+	{
+		"id": "work2",
+		"text": "work2!!"
 	}
 
 ]

@@ -39,6 +39,7 @@ public class Section {
                     effectList.add((Effect) constructor[0].newInstance(data));
                 } catch (Exception e){
                     System.err.println("Invalid Effect Constructor \"" + effect + "\"" + " on section \"" + this.id + "\"");
+                    e.printStackTrace();
                     System.exit(0);
                 }
 
